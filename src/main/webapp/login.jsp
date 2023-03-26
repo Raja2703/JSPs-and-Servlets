@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	wad
+	<form action="Login">
+		Enter username :<input type="text" name="uname"><br>
+		Enter password :<input type="password" name="pass">
+		<button type="submit">login</button>
+	</form>
+	
 </body>
 </html>
