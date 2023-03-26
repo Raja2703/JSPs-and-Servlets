@@ -8,6 +8,9 @@
 </head>
 <body>
 	<%
+		//page caching is made false
+		response.setHeader("Cache-Control","no-cahce,no-store,must-revalidate");
+	
 		if(session.getAttribute("uname")== null){
 			response.sendRedirect("login.jsp");
 		}
