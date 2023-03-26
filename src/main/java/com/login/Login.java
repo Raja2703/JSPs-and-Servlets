@@ -2,6 +2,8 @@ package com.login;
 
 import java.io.IOException;
 
+import com.login.dao.LoginDao;
+
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,7 +16,9 @@ public class Login extends HttpServlet {
 		String uname=req.getParameter("uname");
 		String pass=req.getParameter("pass");
 		
-		if(uname.equals("Raja") && pass.equals("27")) {
+		LoginDao dao=new LoginDao();
+		
+		if(dao.checkCred(uname, pass)) {
 			HttpSession session = req.getSession();
 			session.setAttribute("uname", uname);
 			session.setAttribute("pass", pass);
